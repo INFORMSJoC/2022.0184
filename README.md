@@ -1,106 +1,108 @@
 [![INFORMS Journal on Computing Logo](https://INFORMSJoC.github.io/logos/INFORMS_Journal_on_Computing_Header.jpg)](https://pubsonline.informs.org/journal/ijoc)
 
-# CacheTest
+# An Interior-Point-Inspired algorithm for Linear Programs arising in Discrete Optimal Transport
 
 This archive is distributed in association with the [INFORMS Journal on
 Computing](https://pubsonline.informs.org/journal/ijoc) under the [MIT License](LICENSE).
 
-The software and data in this repository are a snapshot of the software and data
-that were used in the research reported on in the paper 
-[This is a Template](https://doi.org/10.1287/ijoc.2019.0000) by T. Ralphs. 
-The snapshot is based on 
-[this SHA](https://github.com/tkralphs/JoCTemplate/commit/f7f30c63adbcb0811e5a133e1def696b74f3ba15) 
-in the development repository. 
 
-**Important: This code is being developed on an on-going basis at 
-https://github.com/tkralphs/JoCTemplate. Please go there if you would like to
-get a more recent version or would like support**
 
 ## Cite
 
 To cite the contents of this respository, please cite both the paper and this repo, using their respective DOIs.
 
-https://doi.org/10.1287/ijoc.2019.0000
+https://doi.org/10.1287/ijoc.2022.0184
 
-https://doi.org/10.1287/ijoc.2019.0000.cd
+https://doi.org/10.1287/ijoc.2022.0184.cd
 
 Below is the BibTex for citing this snapshot of the respoitory.
 
 ```
-@article{CacheTest,
-  author =        {T. Ralphs},
+@article{IPMforOT,
+  author =        {F. Zanetti and J. Gondzio},
   publisher =     {INFORMS Journal on Computing},
-  title =         {{CacheTest}},
-  year =          {2020},
-  doi =           {10.1287/ijoc.2019.0000.cd},
-  url =           {https://github.com/INFORMSJoC/2019.0000},
+  title =         {An Interior-Point-Inspired algorithm for Linear Programs arising in Discrete Optimal Transport},
+  year =          {2023},
+  doi =           {10.1287/ijoc.2022.0184.cd},
+  url =           {https://github.com/INFORMSJoC/2022.0184},
 }  
 ```
 
 ## Description
 
-The goal of this software is to demonstrate the effect of cache optimization.
-
-## Building
-
-In Linux, to build the version that multiplies all elements of a vector by a
-constant (used to obtain the results in [Figure 1](results/mult-test.png) in the
-paper), stepping K elements at a time, execute the following commands.
-
+This software is used to solve discrete optimal transport problems. For a description of the specialized interior point solver developed, see the paper ***An Interior-Point-Inspired algorithm for Linear programs arising in Discrete Optimal Transport***. The test problems come from the freely available collection [DOTmark](http://www.stochastik.math.uni-goettingen.de/index.php?id=215/). The corresponding images can be found in 
 ```
-make mult
+data/dotmark_images/
 ```
 
-Alternatively, to build the version that sums the elements of a vector (used
-to obtain the results [Figure 2](results/sum-test.png) in the paper), stepping K
-elements at a time, do the following.
+## Using the IPM solver
 
+To run the interior point solver use the script ***run_dotmark.m*** (more details are in the README file in the folder ***scripts***). The results are saved, as a Matlab table, in the folder 
 ```
-make clean
-make sum
+results/IPM_results/ 
+```
+The results obtained by the authors instead are reported in the folder
+```
+results/original_results/results_IPM/
 ```
 
-Be sure to make clean before building a different version of the code.
+## Using the Lemon solver
 
-## Results
+There is also a script to run the same problems using Lemon, a newtork optimization library freely available from [here](https://lemon.cs.elte.hu/trac/lemon/wiki/Downloads). The script ***generate_lemon_data.m*** generates the problems in a way that can be used by Lemon; choose the resolution and the problem in the script. The data is saved in
+```
+data/lemon_data/
+```
 
-Figure 1 in the paper shows the results of the multiplication test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
+The code to use to run Lemon is ***dotmark_lemon_code.cpp*** in ***src*** and has to be compiled using at least C++11 (more details are in the README file in the folder ***scripts***). The results are saved in the folder
+```
+results/lemon_results/
+```
+while the results obtained by the authors are reported in
+```
+results/original_results/results_lemon/
+```
 
-![Figure 1](results/mult-test.png)
+The script to run the problems with Cplex is not reported, due to copyright reasons. The results obtained with Cplex by the authors are reported in 
+```
+results/original_results/results_cplex/
+```
 
-Figure 2 in the paper shows the results of the sum test with different
-values of K using `gcc` 7.5 on an Ubuntu Linux box.
 
-![Figure 1](results/sum-test.png)
+
 
 ## Replicating
 
-To replicate the results in [Figure 1](results/mult-test), do either
-
+In order to replicate the figures in the paper, run the scripts in
 ```
-make mult-test
-```
-or
-```
-python test.py mult
-```
-To replicate the results in [Figure 2](results/sum-test), do either
-
-```
-make sum-test
-```
-or
-```
-python test.py sum
+scripts/generate_figures/
 ```
 
-## Ongoing Development
+- ***perf_profile_dotmark.m*** reproduces the performance profiles for a given resolution (Figure 4 in the paper).
 
-This code is being developed on an on-going basis at the author's
-[Github site](https://github.com/tkralphs/JoCTemplate).
+- ***time_spread_128.m*** reproduces the plot of the computational time of each problem in each class, for a given cost function (Figure 5 in the paper).
 
-## Support
+- ***logplot_large_scale.m*** reproduces the logarithmic plot of the computational times with up to 4.3 billion variables, for a given cost function (Figure 6 in the paper).
 
-For support in using this software, submit an
-[issue](https://github.com/tkralphs/JoCTemplate/issues/new).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
