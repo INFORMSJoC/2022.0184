@@ -6,6 +6,19 @@ function [index,pred,sred,coladd,colrem]=updateindexred_full(index,redcost,m,pre
 %   Updates the basis indexes, based on the reduced 
 %    costs and the primal variable
 %
+%   INPUT
+%   index     : current set of presumed basic variables
+%   redcost   : vector of reduced costs
+%   m         : size of the problem
+%   pred,sred : sparsified primal and dual variables
+%   mu        : IPM parameter
+%
+%   OUTPUT
+%   index     : new set of presumed basic variables
+%   pred,sred : new primal/dual variables
+%   coladd    : number of variables added
+%   colrem    : number of columns removed
+%
 %
 %   Filippo Zanetti, 2022
 %

@@ -2,7 +2,7 @@
 
 # Using the interior point solver
 
-To run the interior point solver on the DOTmark collection, use the script 
+After downloading the DOTmark collection (using ***scripts/get_dotmark.sh***) run the interior point solver using the script 
 ```
 run_dotmark.m
 ```
@@ -16,6 +16,11 @@ Once the script is run, the results are saved in
 ```
 results/IPM_results/
 ```
+and can be visualized using the scripts in 
+```
+scripts/generate_figures/
+```
+
 Have a look at the help for ***OT_IPM*** to set more parameters (IPM tolerance, maximum iterations, verbosity...), or open the script ***src/CheckInput.m*** for more advanced parameters.
 
 
@@ -25,7 +30,7 @@ After having installed [Lemon](https://lemon.cs.elte.hu/trac/lemon/wiki/Download
 ```
 generate_lemon_data.m
 ```
-with the same parameters described above, to generate the data that Lemon uses. Then, compile the script ***dotmark_lemon_code.cpp*** with the following command on a terminal
+with the same parameters described above, to generate the data that Lemon uses. This saves the data in the folder ***data/lemon_data***. Then, compile the script ***dotmark_lemon_code.cpp*** with the following command on a terminal
 ```
 g++ -std=c++11 -O3 dotmark_lemon_code.cpp -o run_lemon
 ```
@@ -40,7 +45,7 @@ The executable file must be run with six parameters:
 
 For example, the following command runs the Lemon solver with resolution 64, cost function given by the 2-norm, for all the problems in classes 1, 2 and 3
 ```
-run_lemon 64 2 1 3 1 45
+./run_lemon 64 2 1 3 1 45
 ```
 
 

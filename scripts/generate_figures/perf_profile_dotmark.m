@@ -1,7 +1,10 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % 
-%   This script generates the performance profiles for resolution
-%   32, 64, or 128, for IPM, Lemon and Cplex.
+%   This script generates the performance profiles of the
+%    computational time for IPM, Lemon and Cplex.
+%
+%   To run the script, select a resolution (32, 64 or 128).
+%
 %
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 

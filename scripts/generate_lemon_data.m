@@ -1,13 +1,28 @@
+%% SCRIPT TO GENERATE THE DATA FOR LEMON
+%
+% Set the parameters
+%
+% - resolution: 32, 64 or 128 (256 requires ~150GB of memory)
+% - Classid: 1 to 10 (it can be an array)
+% - problem: 1 to 45 (it can be an array), or 0 to select all
+%
+% The script generates txt files with the data for Lemon and
+%  saves them in the folder data/lemon_data/. To use them,
+%  compile and run the script dotmark_lemon_code.cpp
+%
+%
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
 %% USER CHOICE
 
 % RESOLUTION 32, 64, 128, 256
-resolution = 64;
+resolution = 32;
 
 %PROBLEM CLASS 1--10
-Classid = 8; 
+Classid = 1; 
 
 %PROBLEM IN THE CLASS 1--45 (0 TO SELECT ALL)
-problem = 27;      
+problem = 1;      
 
 %% GENERATE PROBLEMS
 
@@ -58,7 +73,7 @@ for classid = Classid
         case 10
             class = 'MicroscopyImages';
     end
-    path_to_images = sprintf('../data/dotmark_images/%s/picture%d_10',class,resolution);
+    path_to_images = sprintf('../data/Pictures/%s/picture%d_10',class,resolution);
 
 
     %loop over problems

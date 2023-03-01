@@ -1,4 +1,20 @@
 %% SCRIPT TO RUN THE IPM ON THE DOTMARK COLLECTION
+%
+% Set the parameters
+%
+% - resolution: 32, 64 or 128 (256 requires ~150GB of memory)
+% - Classid: 1 to 10 (it can be an array)
+% - problem: 1 to 45 (it can be an array), or 0 to select all
+% - distance: 1, 2 or 3, to select the cost function
+%
+% The script runs the IPM solver for the problems selected
+%  and saves the results as a Matlab table in the folder
+%  results/IPM_results/
+% 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+
+
 
 %% USER CHOICE
 
@@ -13,6 +29,7 @@ problem = 1;
 
 %COST FUNCTION 1 (1-NORM), 2 (2-NORM), 3 (INFTY-NORM)
 distance = 1;
+
 
 %% SET UP
 
@@ -96,7 +113,7 @@ for classid = Classid
         case 10
             class = 'MicroscopyImages';
     end
-    path_to_images = sprintf('../data/dotmark_images/%s/picture%d_10',class,resolution);
+    path_to_images = sprintf('../data/Pictures/%s/picture%d_10',class,resolution);
 
 
     %loop over problems

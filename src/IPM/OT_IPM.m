@@ -61,7 +61,7 @@ alpha_s = 0;
 
 col_added = 0;
 col_removed = 0;
-number_of_variables = 0;
+Number_of_variables = 0;
 Variation_edges = 0;
 countdirect = 0;
 countiterative = 0;

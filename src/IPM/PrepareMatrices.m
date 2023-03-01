@@ -1,10 +1,28 @@
-function Mat=PrepareMatrices(pred,sred,index,in)
+function Mat = PrepareMatrices(pred,sred,index,in)
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % 
 %   OT_IPM: PrepareMatrices
 %
 %   Computes the Schur complement, preconditioner or
 %    factorization
+%
+%   INPUT
+%   pred    : sparsified primal variable
+%   sred    : sparsified dual variable
+%   index   : current set of presumed basic variables
+%   in      : input struct
+%
+%   OUTPUT
+%   Mat     : struct with fields
+%       M,N,V    = blocks of the normal equations
+%       S        = Schur complement        
+%       Lfactor  = Triangular factor (either full or
+%                  incomplete) of S
+%       Lfactort = transpose of Lfactor
+%       Dfactor  = D factor in ldl factorization
+%       perm     = approx min degree permutation
+%
+%
 %
 %
 %   Filippo Zanetti, 2022

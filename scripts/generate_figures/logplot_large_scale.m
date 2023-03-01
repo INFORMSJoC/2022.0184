@@ -5,12 +5,16 @@
 %   -Lemon
 %   -Cplex
 %
+%   To run it, select a cost function (1, 2 or 3)
+%
+%
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
 
 
-%%CHOOSE COST FUNCTION
+%% CHOOSE COST FUNCTION
+%1: 1-norm, 2: 2-norm or 3: \infty-norm 
 
 cost_function = 3;
 
