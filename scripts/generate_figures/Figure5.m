@@ -2,7 +2,7 @@
 % 
 %   This script generates the plot of the computational times
 %    for each class and each problem of the DOTmark collection
-%    at resolution 128.
+%    at resolution 128 (Figure 5 in the paper).
 %
 %   To run the script, choose a cost function (1, 2 or 3).
 %

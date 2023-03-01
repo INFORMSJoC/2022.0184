@@ -1,7 +1,8 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % 
 %   This script generates the performance profiles of the
-%    computational time for IPM, Lemon and Cplex.
+%    computational time for IPM, Lemon and Cplex
+%    (Figure 4 in the paper).
 %
 %   To run the script, select a resolution (32, 64 or 128).
 %

@@ -4,6 +4,7 @@
 %   -IPM
 %   -Lemon
 %   -Cplex
+%   (Figure 6 in the paper).
 %
 %   To run it, select a cost function (1, 2 or 3)
 %
