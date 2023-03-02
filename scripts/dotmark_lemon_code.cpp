@@ -91,7 +91,7 @@ bool build_vectors(int class_id,int prob_id,int resolution,int m,int n,vec& a,ve
     snprintf(prob_name,60,"../data/lemon_data/class_%d_prob_%d_res_%d.txt",class_id,prob_id,resolution);
     std::fstream file(prob_name);
     if (!file) {
-        std::cerr<<"- - - - Error with input file - - - - "<<'\n';
+        std::cerr<<"- - - - Error with input file - - - - \n";
         std::cerr<<"- - - - Skipping current problem - - - - \n";
         skip_problem = true;
     }

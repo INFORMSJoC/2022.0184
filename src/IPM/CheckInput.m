@@ -6,6 +6,21 @@ function in = CheckInput(in)
 %   Checks the input struct and assigns the
 %    default values to the empty fields.
 %
+%   INPUT/OUTPUT
+%    in: struct with fields
+%   
+%   m, n    : size of the problem
+%   print   : verbosity (true/false)
+%   tol     : IPM tolerance
+%   maxit   : IPM max iterations
+%   maxcc   : max number of correctors
+%   predtol : CG tolerance for predictor direction
+%   corrtol : CG tolerance for corrector directions
+%   CGmaxit : CG max iterations
+%
+%   Other technical fields are shown at the bottom 
+%    of the script
+%
 %
 %   Filippo Zanetti, 2022
 %
@@ -63,7 +78,7 @@ in.gamma=0.1;
 %fraction for affine scaling direction
 in.sigma_aff=0.05;
 
-%linear solver
+%initial linear solver
 in.method='iterative';
 
 %threshold for heuristic

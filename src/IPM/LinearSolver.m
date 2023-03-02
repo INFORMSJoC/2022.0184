@@ -6,6 +6,16 @@ function [dy,iterpcg]=LinearSolver(in,Mat,rhs,tol)
 %   Solves the normal equations linear system with
 %    PCG or full factorization
 %
+%   INPUT
+%   in      : input struct, produces using CheckInput
+%   Mat     : Mat struct, produced using PrepareMatrices
+%   rhs     : right hand side of the linear system
+%   tol     : tolerance for CG
+%
+%   OUTPUT
+%   dy      : Newton direction
+%   iterpcg : number of cg iterations performed
+%
 %
 %   Filippo Zanetti, 2022
 %

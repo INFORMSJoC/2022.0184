@@ -30,10 +30,18 @@ Below is the BibTex for citing this snapshot of the respoitory.
 
 ## Description
 
-This software is used to solve discrete optimal transport problems. For a description of the specialized interior point solver developed, see the paper ***An Interior-Point-Inspired algorithm for Linear programs arising in Discrete Optimal Transport***. The test problems come from the freely available collection [DOTmark](http://www.stochastik.math.uni-goettingen.de/index.php?id=215/). The corresponding images can be found in 
+This software is used to solve discrete optimal transport problems. For a description of the specialized interior point solver developed, see the paper ***An Interior-Point-Inspired algorithm for Linear programs arising in Discrete Optimal Transport***. 
+
+
+## Downloading the data
+The test problems come from the freely available collection of images [DOTmark](http://www.stochastik.math.uni-goettingen.de/index.php?id=215/). To download the data, use the script ***get_dotmark.sh*** in the folder ***scripts***:
 ```
-data/dotmark_images/
+bash scripts/get_dotmark.sh
 ```
+This will save the images in the folder ***data/Pictures***.
+
+
+
 
 ## Using the IPM solver
 
@@ -52,8 +60,9 @@ There is also a script to run the same problems using Lemon, a newtork optimizat
 ```
 data/lemon_data/
 ```
+This folder now contains some example problems, but any problem used in the paper can be generated (see the details in the README file in the folder ***scripts***).
 
-The code to use to run Lemon is ***dotmark_lemon_code.cpp*** in ***src*** and has to be compiled using at least C++11 (more details are in the README file in the folder ***scripts***). The results are saved in the folder
+The code to use to run Lemon is ***dotmark_lemon_code.cpp*** in ***src*** and has to be compiled using at least C++11 (see README in ***scripts***). The results are saved in the folder
 ```
 results/lemon_results/
 ```
@@ -62,10 +71,16 @@ while the results obtained by the authors are reported in
 results/original_results/results_lemon/
 ```
 
-The script to run the problems with Cplex is not reported, due to copyright reasons. The results obtained with Cplex by the authors are reported in 
+
+## Using the Cplex solver
+
+The Cplex solver is run through the standard example ***netex1.c*** provided in any Cplex distribution. The script is not reported in this repository due to copyright issues, but it can be easily modified to include a fully bipartite graph (as is done in ***dotmark_lemon_code.cpp***) and using the same data as Lemon (saved in ***data/lemon_data*** or generated using ***generate_lemon_data.m***). The results obtained with Cplex by the authors are reported in 
 ```
 results/original_results/results_cplex/
 ```
+
+
+
 
 
 
