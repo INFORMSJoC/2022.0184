@@ -36,7 +36,8 @@ This software is used to solve discrete optimal transport problems. For a descri
 ## Downloading the data
 The test problems come from the freely available collection of images [DOTmark](http://www.stochastik.math.uni-goettingen.de/index.php?id=215/). To download the data, use the script ***get_dotmark.sh*** in the folder ***scripts***:
 ```
-bash scripts/get_dotmark.sh
+cd scripts
+bash get_dotmark.sh
 ```
 This will save the images in the folder ***data/Pictures***.
 
